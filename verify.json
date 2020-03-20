@@ -1,0 +1,50 @@
+{
+	"105": [{
+		"number": 105,
+		"articleNo": "爱宝贝服饰&男童套装1123",
+		"color": "白色",
+		"size": 130,
+		"actual": 49,
+		"amount": 4,
+		"name": "陈晨",
+		"receiversMobile": "15053413111",
+		"receiversAddress": "山东省德州市禹城市开发区群贤居西区B区3号楼3单元502",
+		"zip": "",
+		"supplier": "千寻鞋业",
+		"phone": "13736553563",
+		"address": "前陈二区147号",
+		"message": ""
+	}],
+	"106": [{
+		"number": 106,
+		"articleNo": "爱宝贝服饰&男童套装1123",
+		"color": "绿色",
+		"size": 140,
+		"actual": 49,
+		"amount": 3,
+		"name": "陈晨",
+		"receiversMobile": "15053413111",
+		"receiversAddress": "山东省德州市禹城市开发区群贤居西区B3号楼3单元502",
+		"zip": "",
+		"supplier": "千寻鞋业",
+		"phone": "13736553563",
+		"address": "前陈二区147号",
+		"message": ""
+	}],
+	"107": [{
+		"number": 107,
+		"articleNo": "爱宝贝服饰&男童套装1123",
+		"color": "白色",
+		"size": 120,
+		"actual": 100,
+		"amount": 2,
+		"name": "姜雨含",
+		"receiversMobile": "18845099690",
+		"receiversAddress": "黑龙江省哈尔滨市南岗区和兴路街道汉兴街96号七政公寓B旁",
+		"zip": "",
+		"supplier": "千寻鞋业",
+		"phone": "13736553563",
+		"address": "前陈二区147号",
+		"message": ""
+	}]
+}
