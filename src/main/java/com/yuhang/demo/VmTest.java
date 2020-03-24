@@ -14,12 +14,15 @@ import com.yuhang.demo.util.PostUtil;
 
 public class VmTest {
 
-	static String api = "http://localhost:36062";
+//	static String api = "http://localhost:36062";
+//	http://apivmi.go2b2b.com:36063/
+
+	static String api = "http://apivmi.go2b2b.com:36062";
 	
 	static String token="Jn5Wu7veuqwBdxGIhbk3YUrRHPI4mNWwVju2zzgpPG34k3mgL9DATu20CrqEvPEG";
 
 	public static void main(String[] args) throws Exception {
-//		String result = login();
+		String result = login();
 //		String result =getAllWarehouse();
 //		String result = addWarehouse();
 //		String result = getProductInfoBySn();
@@ -38,7 +41,7 @@ public class VmTest {
 //		String result = queryQuickStock();
 //		String result = productlist();
 //		String result = productgetSn();
-		String result =commongetBarcodeLog();
+//		String result =commongetBarcodeLog();
 		System.out.println(result);
 	}
 	
@@ -192,9 +195,13 @@ public class VmTest {
 	
 	public static String login() throws Exception {
 		String url = api + "/login";
+		
+		
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("username", "创意·雨燕"));
-		formparams.add(new BasicNameValuePair("password", "T1Hj745M7n2a"));
+//		formparams.add(new BasicNameValuePair("username", "创意·雨燕"));
+//		formparams.add(new BasicNameValuePair("password", "T1Hj745M7n2a"));
+		formparams.add(new BasicNameValuePair("username", "160b7fca7dfb76fcd7fef3e25340458f"));
+		formparams.add(new BasicNameValuePair("password", "2676aa71420e0a06b82ee5a061e061811"));
 		return PostUtil.httpPost(url, formparams);
 	}
 }

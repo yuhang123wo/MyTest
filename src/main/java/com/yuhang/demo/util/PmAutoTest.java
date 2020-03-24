@@ -1289,9 +1289,9 @@ public class PmAutoTest {
 	public static String refundListvib() throws IOException {
 		String url = PmTest.api + "/2b/df/order/refundList";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
-		formparams.add(new BasicNameValuePair("purchaserId", "55934"));
-		formparams.add(new BasicNameValuePair("orderNo", "1912036232385"));
-		
+		formparams.add(new BasicNameValuePair("purchaserId", "502850"));
+//		formparams.add(new BasicNameValuePair("orderNo", "1912036232385"));
+		formparams.add(new BasicNameValuePair("deliverOrderType", "2"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
@@ -1836,6 +1836,7 @@ public class PmAutoTest {
 		formparams.add(new BasicNameValuePair("userId", "55934"));
 		formparams.add(new BasicNameValuePair("pageSize", "10"));
 //		formparams.add(new BasicNameValuePair("orderKind", "1"));
+		formparams.add(new BasicNameValuePair("deliverOrderType", "1"));
 //		formparams.add(new BasicNameValuePair("ids", "4265220,4265219"));
 //		formparams.add(new BasicNameValuePair("orderNo", "1912116238165"));
 		return PostUtil.httpPost(url, formparams);

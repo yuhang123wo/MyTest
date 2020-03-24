@@ -8,9 +8,9 @@ import com.yuhang.demo.util.PostUtil;
 
 public class BuyTest {
 
-//	public static String api = "http://localhost:8080/buyers-show";
+	public static String api = "http://localhost:8080/buyers-show";
 	
-	public static String api="http://apibshow.go2b2b.com";
+//	public static String api="http://apibshow.go2b2b.com";
 	
 	public static String createShow() throws Exception {
 
@@ -203,8 +203,39 @@ public class BuyTest {
 		params.put("timestamp", new Date().getTime());
 		return PostUtil.httpApp(url, params);
 	}
+	public static String pubList() throws Exception {
 
+		String url = api + "/bshow/common/pubList";
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("userId", 265);
+		params.put("timestamp", new Date().getTime());
+		return PostUtil.httpApp(url, params);
+	}
 	
+	
+	public static String tradeList() throws Exception {
+
+		String url = api + "/bshow/common/tradeList";
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("userId", 6324);
+//		params.put("orderNo", "82020032002");
+		params.put("pageSize", 10);
+		params.put("username", "gan");
+		params.put("timestamp", new Date().getTime());
+		return PostUtil.httpApp(url, params);
+	}
+	
+	public static String getProductBuyersData() throws Exception {
+
+		String url = api + "/bshow/common/getProductBuyersData";
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("userId", 6324);
+		params.put("productIds", "1801731,1801730,1");
+		params.put("timestamp", new Date().getTime());
+		return PostUtil.httpApp(url, params);
+	}
+	
+	 
 	public static void main(String[] args) {
 
 		try {
@@ -212,7 +243,7 @@ public class BuyTest {
 //			 String result = getBuyersShowDetail();
 //			 String result = takeBuyersShowOrder();
 //			 String result =buyersShowOrderList();
-			String result = getMytalentsData();
+//			String result = getMytalentsData();
 //			String result =getBuyersShowHis();
 //			String result =cancelBuyerShowOrder();
 //			String result = createShow();
@@ -225,6 +256,9 @@ public class BuyTest {
 //			 String result =   settedShow();
 //			 String result =   getTradeList();
 //			 String result =  refuseBuyerShowOrder();
+//			String result = pubList();
+			String result=tradeList();
+//			String result =getProductBuyersData();
 			System.out.println(result);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

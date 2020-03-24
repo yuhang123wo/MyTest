@@ -73,7 +73,7 @@ public class PmTest {
 //			 String result = PmAutoTest.updateRefundSign();
 			 
 //			 String result = PmAutoTest.updateRefundRefuse();
-//			 String result = PmAutoTest.refundListvib();
+			 String result = PmAutoTest.refundListvib();
 			// String result = PmAutoTest.accountInfo();
 			// String result = PmAutoTest.transactionList();
 			// String result = PmAutoTest.transferReceive();
@@ -225,7 +225,7 @@ public class PmTest {
 //			String result =PmAutoTest.getRecvInfo();
 //			String result =PmAutoTest.wintakelogout();
 			
-			String result =PmAutoTest.orderRefund();
+//			String result =PmAutoTest.orderRefund();
 			System.out.println(result);
 //			upload2(api);
 		} catch (Exception e) {
