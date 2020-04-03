@@ -19,16 +19,16 @@ public class VmTest {
 
 	static String api = "http://apivmi.go2b2b.com:36062";
 	
-	static String token="Jn5Wu7veuqwBdxGIhbk3YUrRHPI4mNWwVju2zzgpPG34k3mgL9DATu20CrqEvPEG";
+	static String token="ICPHq1OowtPP8SkjFppANCY/zCWk57+iM/lubo7P/x+7DUU6BkX7lc3+zayHVoT2";
 
 	public static void main(String[] args) throws Exception {
-		String result = login();
+//		String result = login();
 //		String result =getAllWarehouse();
 //		String result = addWarehouse();
 //		String result = getProductInfoBySn();
 //		String result =test();
 //		String result =addWorkStoreProduct();
-//		String result =storeList();
+		String result =storeList();
 //		String result=storeDetailList();
 //		String result=queryStock();
 //		String result=backgetProductSnList();

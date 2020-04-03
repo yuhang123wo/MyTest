@@ -496,9 +496,9 @@ public class PrdAutoTest {
 		String url = PrdTest.api + "/drp/order/dfOrderList";
 		long b = new Date().getTime();
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("prdId", 231);
+		params.put("prdId", 11111);
 //		params.put("state", "WAITFORPAY");
-		params.put("orderNo", "19");
+//		params.put("orderNo", "19");
 		params.put("timestamp", b);
 		return PostUtil.httpPostPrd(url, params);
 	}

@@ -15,7 +15,6 @@ import org.apache.http.message.BasicNameValuePair;
 
 import com.alibaba.fastjson.JSON;
 import com.go2.shipping.common.encrypt.AES;
-import com.yuhang.demo.DsTest;
 import com.yuhang.demo.PmTest;
 import com.yuhang.demo.util.vo.FreightVo;
 import com.yuhang.demo.util.vo.Freights;
@@ -670,7 +669,7 @@ public class PmAutoTest {
 	}
 
 	private static String alipayNotify() throws IOException {
-		String url = "http://127.0.0.1:8080/web-service/pay/alipay/notify";
+		String url = "http://127.0.0.1:8087/app-1b/deal/alipay/return";
 		// String url =
 		// "http://127.0.0.1:8089/web-service/fruits/pay/alipay/notify";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
@@ -689,10 +688,10 @@ public class PmAutoTest {
 		formparams.add(new BasicNameValuePair("notify_id", "451f45b153cdfe0cbe7e63e6aca32adlse"));
 		formparams.add(new BasicNameValuePair("notify_type", "trade_status_sync"));
 		formparams.add(new BasicNameValuePair("payment_type", "1"));
-		formparams.add(new BasicNameValuePair("out_trade_no", "GSB_TEBBV_27442"));
-		formparams.add(new BasicNameValuePair("price", "220"));
+		formparams.add(new BasicNameValuePair("out_trade_no", "GSB_TEBBV_27731"));
+		formparams.add(new BasicNameValuePair("price", "0.01"));
 		formparams.add(new BasicNameValuePair("trade_status", "TRADE_SUCCESS"));
-		formparams.add(new BasicNameValuePair("total_fee", "220"));
+		formparams.add(new BasicNameValuePair("total_fee", "0.01"));
 		formparams.add(new BasicNameValuePair("trade_no", "20170322210010047502763188890"));
 		formparams.add(new BasicNameValuePair("sign_type", "MD5"));
 		formparams.add(new BasicNameValuePair("seller_id", "2088221939210090"));
@@ -886,7 +885,8 @@ public class PmAutoTest {
 //		System.out.println(str);
 
 		
-		alipayNotify();
+		String s= alipayNotify();
+		System.out.println(s);
 
 	}
 
@@ -1973,5 +1973,19 @@ public class PmAutoTest {
 		formparams.add(new BasicNameValuePair("type", "ALIPAY"));
 		formparams.add(new BasicNameValuePair("pwd", "123456"));
 		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String dataChargePay() throws Exception {
+		String url = PmTest.api + "deal/dataChargePay";
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("userId", 59722);
+		map.put("payType", "ALIPAY");//BALANCE
+		map.put("returnUrl", "http://app.go2b2b.com/deal/alipay/return");
+		map.put("targetId", 2);
+		map.put("amount", "0.01");
+		map.put("comments", 1);
+		map.put("password", "123456");
+		map.put("timestamp", new Date().getTime());
+		return PostUtil.httpApp(url, map);
 	}
 }

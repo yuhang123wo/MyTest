@@ -36,7 +36,7 @@ public class PrdTest {
 //		String result = PrdAutoTest.createDfOrder();
 //		String result = PrdAutoTest.getProductByProductId();
 //		String result = PrdAutoTest.getDsInfo();
-//		String result = PrdAutoTest.dfOrderList();
+		String result = PrdAutoTest.dfOrderList();
 //		String result = PrdAutoTest.dforderPay();
 
 //		String result = PrdAutoTest.updateCutomerComments();
@@ -64,7 +64,7 @@ public class PrdTest {
 //		String result = PrdAutoTest.drpproductDetail();
 //		String result = PrdAutoTest.getWithdrawAmount();
 //		String result = PrdAutoTest.getCode();
-		String result = PrdAutoTest.listPostage();
+//		String result = PrdAutoTest.listPostage();
 //		String result = PrdAutoTest.getTradeRelationDrp();
 //		String result = PrdAutoTest.getTradeRelationDrp();
 //		String result = PrdAutoTest.modifyPostageState();
