@@ -1979,13 +1979,109 @@ public class PmAutoTest {
 		String url = PmTest.api + "deal/dataChargePay";
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("userId", 59722);
-		map.put("payType", "ALIPAY");//BALANCE
+		map.put("payType", "BALANCE");//BALANCE
 		map.put("returnUrl", "http://app.go2b2b.com/deal/alipay/return");
-		map.put("targetId", 2);
+		map.put("targetId", 3);
 		map.put("amount", "0.01");
 		map.put("comments", 1);
 		map.put("password", "123456");
 		map.put("timestamp", new Date().getTime());
 		return PostUtil.httpApp(url, map);
 	}
+	
+	
+	
+	
+	public static String getRefundOrderByExpress() throws IOException {
+		String url = PmTest.api + "/refund/scan/getRefundOrderByExpress";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("expressId", "1"));
+		formparams.add(new BasicNameValuePair("expressNo", "222233344556"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String addWorkSignIn() throws IOException {
+		String url = PmTest.api + "/refund/scan/addWorkSignIn";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("expressId", "1"));
+		formparams.add(new BasicNameValuePair("expressNos", "222233344556"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String refundScanList() throws IOException {
+		String url = PmTest.api + "/refund/scan/refundScanList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("expressId", "1"));
+		formparams.add(new BasicNameValuePair("startTime", "2020-04-10"));
+		formparams.add(new BasicNameValuePair("endTime", "2020-04-10"));
+//		formparams.add(new BasicNameValuePair("clerkId", "1"));
+//		formparams.add(new BasicNameValuePair("status", "0"));
+		formparams.add(new BasicNameValuePair("supplierAddress", "134"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String refundDealList() throws IOException {
+		String url = PmTest.api + "/refund/scan/refundDealList";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("expressNo", "2"));
+		formparams.add(new BasicNameValuePair("startTime", "2020-04-10"));
+		formparams.add(new BasicNameValuePair("endTime", "2020-04-10"));
+//		formparams.add(new BasicNameValuePair("clerkId", "1"));
+		formparams.add(new BasicNameValuePair("relationTag", "1"));
+		formparams.add(new BasicNameValuePair("refundTag", "0"));
+		formparams.add(new BasicNameValuePair("supplierAddress", "1"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String getRefundItemByExpress() throws IOException {
+		String url = PmTest.api + "/refund/scan/getRefundItemByExpress";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("expressNo", "222233344556"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String getRefundItemByTakeCode() throws IOException {
+		String url = PmTest.api + "/refund/scan/getRefundItemByTakeCode";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("takeCode", "00004"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String updateRefundScanTk() throws IOException {
+		String url = PmTest.api + "/refund/scan/updateRefundScanTk";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("id", "1"));
+		formparams.add(new BasicNameValuePair("remark", "1"));
+		formparams.add(new BasicNameValuePair("amount", "10"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String assignRefundScanClerk() throws IOException {
+		String url = PmTest.api + "/refund/scan/assignRefundScanClerk";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("ids", "1"));
+		formparams.add(new BasicNameValuePair("clerkId", "621327"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String updateRelationWithRecord() throws IOException {
+		String url = PmTest.api + "/refund/scan/updateRelationWithRecord";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		formparams.add(new BasicNameValuePair("json", "1"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String dictExpress() throws IOException {
+		String url = PmTest.api + "/refund/scan/dictExpress";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("dsId", "464671"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
 }

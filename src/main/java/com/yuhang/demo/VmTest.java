@@ -18,17 +18,19 @@ public class VmTest {
 //	http://apivmi.go2b2b.com:36063/
 
 	static String api = "http://apivmi.go2b2b.com:36062";
-	
-	static String token="ICPHq1OowtPP8SkjFppANCY/zCWk57+iM/lubo7P/x+7DUU6BkX7lc3+zayHVoT2";
-
+//	Vu1DTuHmI19wW1tNUhHNJ6Qs+oTjFX3wFqd5himRMueBQ+XbwcLITnjwzMBDMFme
+	static String token="t6DNXfoM8L/cCa2VHoe1RMH4pIIHuL2x3x6gtqH94qjXE2z1SgWp63zy3urwKU0P";
+//DyMCsZXuuraCa4r8U6Wm1SKdKiNygM7OmV6QhnjRqGvd9hgnr+N2baNDZZO/oz4x
 	public static void main(String[] args) throws Exception {
 //		String result = login();
 //		String result =getAllWarehouse();
 //		String result = addWarehouse();
 //		String result = getProductInfoBySn();
+//		String result = info();
 //		String result =test();
 //		String result =addWorkStoreProduct();
-		String result =storeList();
+//		String result =storeList();
+		String result =getProductInfoByArtNo();
 //		String result=storeDetailList();
 //		String result=queryStock();
 //		String result=backgetProductSnList();
@@ -40,6 +42,7 @@ public class VmTest {
 //		String result = getColorListByArtNo();
 //		String result = queryQuickStock();
 //		String result = productlist();
+//		String result =	detail();
 //		String result = productgetSn();
 //		String result =commongetBarcodeLog();
 		System.out.println(result);
@@ -67,6 +70,14 @@ public class VmTest {
 		String url = api + "/api/product/list";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("token", token));
+		formparams.add(new BasicNameValuePair("pageSize", "10"));
+		formparams.add(new BasicNameValuePair("pageNo", "19"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String detail() throws Exception {
+		String url = api + "/api/product/detail/11";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		return PostUtil.httpPost(url, formparams);
 	}
 	
@@ -74,8 +85,8 @@ public class VmTest {
 		String url = api + "/api/sale/queryQuickStock";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("token", token));
-		formparams.add(new BasicNameValuePair("productId", "1"));
-		formparams.add(new BasicNameValuePair("color", "红"));
+//		formparams.add(new BasicNameValuePair("productId", "1176072"));
+		formparams.add(new BasicNameValuePair("color", "军绿色"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
@@ -83,7 +94,7 @@ public class VmTest {
 		String url = api + "/api/sale/getColorListByArtNo";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("token", token));
-		formparams.add(new BasicNameValuePair("artNo", "1"));
+		formparams.add(new BasicNameValuePair("artNo", "D230"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	
@@ -156,6 +167,15 @@ public class VmTest {
 		return PostUtil.httpPost(url, formparams);
 	}
 	
+	public static String getProductInfoByArtNo() throws Exception {
+		String url = api + "/api/product/getProductInfoByArtNo";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("token", token));
+		formparams.add(new BasicNameValuePair("artNo", "1"));
+		formparams.add(new BasicNameValuePair("limitNum", "1"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
 	public static String test() throws Exception {
 		String url = api + "/api/store/test";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
@@ -167,7 +187,15 @@ public class VmTest {
 		String url = api + "/api/store/getProductInfoBySn";
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 		formparams.add(new BasicNameValuePair("token", token));
-		formparams.add(new BasicNameValuePair("sn", "80232132131"));
+		formparams.add(new BasicNameValuePair("sn", "80232132131,100000063"));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	public static String info() throws Exception {
+		String url = api + "/api/product/info";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("token", token));
+		formparams.add(new BasicNameValuePair("sn", "80232132131,100000063"));
 		return PostUtil.httpPost(url, formparams);
 	}
 	

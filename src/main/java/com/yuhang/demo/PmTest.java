@@ -17,7 +17,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import com.yuhang.demo.util.PmAutoTest;
 
 public class PmTest {
-	 public static String api = "http://app.go2b2b.com/";
+//	 public static String api = "http://app.go2b2b.com/";
 //	public static String api = "http://116.62.199.18:16620/";
 //	public static String api = "http://yhwo.free.idcfengye.com";
 //	public static String api = "http://192.168.1.11:8080/";
@@ -25,7 +25,7 @@ public class PmTest {
 //	public static String api = "httpssxx://47.96.99.15:24010/";
 //	 public static String api="http://127.0.0.1:8026/";
 	
-//	public static String api="http://127.0.0.1:8080/web-service/";
+	public static String api="http://127.0.0.1:8086/web-service/";
 //	public static String api = "http://116.62.199.18:16610/";
 //	public static String api="http://192.168.1.11:8080";
 	// public static String api="http://api.app.gsb68.com";
@@ -227,7 +227,21 @@ public class PmTest {
 			
 //			String result =PmAutoTest.orderRefund();
 			
-			String result =PmAutoTest.dataChargePay();
+//			String result =PmAutoTest.dataChargePay();
+			
+			//
+//			String result = PmAutoTest.getRefundOrderByExpress();
+			
+//			String result = PmAutoTest.addWorkSignIn();
+//			String result = PmAutoTest.refundScanList();
+			
+//			String result = PmAutoTest.refundDealList();
+//			String result = PmAutoTest.getRefundItemByExpress();
+//			String result = PmAutoTest.getRefundItemByTakeCode();
+//			String result = PmAutoTest.updateRefundScanTk();
+//			String result = PmAutoTest.assignRefundScanClerk();
+			String result = PmAutoTest.updateRelationWithRecord();
+//			String result = PmAutoTest.dictExpress();
 			System.out.println(result);
 //			upload2(api);
 		} catch (Exception e) {
