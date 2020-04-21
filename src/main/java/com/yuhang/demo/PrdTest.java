@@ -11,7 +11,7 @@ public class PrdTest {
 
 	public static void main(String[] args) throws Exception {
 //		String result = PrdAutoTest.createDrpProduct();
-//		String result = PrdAutoTest.productList();
+		String result = PrdAutoTest.productList();
 //		String result = PrdAutoTest.prdInfo();
 //		String result = PrdAutoTest.updateProductState();
 //		String result = PrdAutoTest.updateProductInfo();
@@ -36,7 +36,7 @@ public class PrdTest {
 //		String result = PrdAutoTest.createDfOrder();
 //		String result = PrdAutoTest.getProductByProductId();
 //		String result = PrdAutoTest.getDsInfo();
-		String result = PrdAutoTest.dfOrderList();
+//		String result = PrdAutoTest.dfOrderList();
 //		String result = PrdAutoTest.dforderPay();
 
 //		String result = PrdAutoTest.updateCutomerComments();
