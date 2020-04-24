@@ -10,17 +10,19 @@ import org.apache.commons.codec.binary.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
+import com.alibaba.fastjson.JSON;
+import com.yuhang.InverntoryPo;
 import com.yuhang.demo.util.PostUtil;
 
 public class VmTest {
 
-//	static String api = "http://localhost:36062";
+	static String api = "http://localhost:36062";
 //	http://apivmi.go2b2b.com:36063/
 
-	static String api = "http://apivmi.go2b2b.com:36062";
+//	static String api = "http://apivmi.go2b2b.com:36062";
 //	static String api = "xxxhttps://vmi.gsb68.com";
 //	Vu1DTuHmI19wW1tNUhHNJ6Qs+oTjFX3wFqd5himRMueBQ+XbwcLITnjwzMBDMFme
-	static String token="pUh7qDHf6S+6SFFDWflbJPmDaQZ2fWIyGKSquRw1HdnfYnPNzPJPrLNTbj/7dcdY";
+	static String token="uhFFqekLmcWFHfZmCdoDYLVj5F4JEu5R8l0p7+ryDzXlxZLe0oaORz9p3ocxbQHJ";
 //	static String token="wytBlqBBtf786bDC93H+8k1+SBPdPNT7Cf/IRiA1FPU4874dsi8ced7y3La6Hbgk";
 //DyMCsZXuuraCa4r8U6Wm1SKdKiNygM7OmV6QhnjRqGvd9hgnr+N2baNDZZO/oz4x
 	public static void main(String[] args) throws Exception {
@@ -58,7 +60,10 @@ public class VmTest {
 //		String result = revokeStoreProduct();
 //		String result =changeStockNum();
 //		String result =getRefundProductInfoBySn();
-		String result =saleOut();
+//		String result =saleOut();
+//		String result =saleOut();
+//		String result =getSkuInfoBySn();
+		String result =updateInventory();
 		System.out.println(result);
 	}
 	
@@ -344,6 +349,39 @@ public class VmTest {
 		formparams.add(new BasicNameValuePair("token", token));
 		return PostUtil.httpPost(url, formparams);
 	}
+	
+	public static String getSkuInfoBySn() throws Exception {
+		String url = api + "/api/inventory/getSkuInfoBySn";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("warehouseId", "2"));
+		formparams.add(new BasicNameValuePair("sn", "100000408,100000409,100000410"));
+		
+		formparams.add(new BasicNameValuePair("token", token));
+		return PostUtil.httpPost(url, formparams);
+	}
+	public static String updateInventory() throws Exception {
+		String url = api + "/api/inventory/updateInventory";
+		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+		formparams.add(new BasicNameValuePair("warehouseId", "2"));
+		List<InverntoryPo> list = new ArrayList<InverntoryPo>();
+		InverntoryPo p = new InverntoryPo();
+		p.setArtNo("S129");
+		p.setColor("黑色薄绒");
+		p.setNewQuantity(1);
+		p.setOldQuantity(0);
+		p.setProductId(585432L);
+		p.setSize("35");
+		List<String> sn = new ArrayList<String>();
+		sn.add("100000408");
+		p.setSn(sn);
+		list.add(p);
+		formparams.add(new BasicNameValuePair("json", JSON.toJSONString(list)));
+		
+		formparams.add(new BasicNameValuePair("token", token));
+		return PostUtil.httpPost(url, formparams);
+	}
+	
+	
 	
 	public static String getDebugTag() throws Exception {
 		String url = api + "/backstage/getDebugTag";

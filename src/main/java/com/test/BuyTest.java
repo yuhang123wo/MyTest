@@ -8,9 +8,9 @@ import com.yuhang.demo.util.PostUtil;
 
 public class BuyTest {
 
-	public static String api = "http://localhost:8086/buyers-show";
+//	public static String api = "http://localhost:8086/buyers-show";
 	
-//	public static String api="http://apibshow.go2b2b.com";
+	public static String api="http://apibshow.go2b2b.com";
 	
 	public static String createShow() throws Exception {
 
